@@ -1,0 +1,15 @@
+这个项目就是解决多线程日志混乱问题
+
+思路：
+把线程运行中的日志收集起来，线程结束后再一次性输出日志
+
+
+
+使用方法:
+1、配置好Filter。最好放在最上层filter。
+filter之后输出的日志将会被收集。并在filter返回时输出日志
+
+2、配置log4j.xml。把appender配置到原来的DailyMaxRollingFileAppender上。
+该appender实际是继承了DailyMaxRollingFileAppender类，不同的是异步输出日志。
+
+
