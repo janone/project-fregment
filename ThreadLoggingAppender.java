@@ -180,7 +180,7 @@ public class ThreadLoggingAppender extends DailyMaxRollingFileAppender{
 		}
 		
 		//异步服务关闭了，就直接打印
-		if(executorService.isShutdown()){
+		if(executorService == null || executorService.isShutdown()){
 			superSubAppend(event);
 			return;
 		}
