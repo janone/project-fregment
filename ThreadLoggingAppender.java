@@ -176,6 +176,7 @@ public class ThreadLoggingAppender extends DailyMaxRollingFileAppender{
 		
 		
 		if(appender == null){
+			superSubAppend(event);
 			return;
 		}
 		
